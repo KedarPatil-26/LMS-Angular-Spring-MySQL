@@ -1,0 +1,61 @@
+.course-details {
+  margin: 20px 30px;
+}
+
+.card{
+position: absolute;
+margin-top: 3%;
+margin-left: 3%;
+height: 80%;
+width: 94%;}
+
+.course-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.course-thumbnail {
+  width: 640px;
+  height: 360px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.course-details-right {
+  flex: 1;
+  margin-right: 3%;
+}
+
+.course-title {
+  font-size: 2em;
+  margin-top: 0;
+  color: #673ab7;
+}
+
+.price-free {
+  font-size: 1.5em;
+  color: green;
+}
+
+.price {
+  font-size: 1.5em;
+  color: blue;
+}
+
+.course-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.course-buttons button {
+  margin-right: 20px;
+}
+
+.course-description {
+font-size: 18px;
+  margin-top: 20px;
+  margin-left: 3%;
+  margin-right: 2%;
+}

@@ -1,0 +1,40 @@
+<app-instructor-navbar></app-instructor-navbar>
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Title" name="title" [(ngModel)]="title" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Description" name="description" [(ngModel)]="description" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Keywords</mat-label>
+      <input matInput placeholder="Keywords" name="keywords" [(ngModel)]="keywords" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Price</mat-label>
+      <input matInput placeholder="Price" name="rawPrice" [(ngModel)]="rawPrice" required type="number" required>
+    </mat-form-field>
+
+    <mat-form-field >
+      <mat-label>Category</mat-label>
+      <mat-select placeholder="Category" [(ngModel)]="categoryId" name="categoryId" required>
+        <mat-option *ngFor="let category of courseCategories" [value]="category.id">{{ category.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div>
+      <p class="text">Thumbnail:</p>
+      <input type="file" (change)="onFileSelected($event)" required >
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Save to Draft</button>
+  </form>
+
+</div>

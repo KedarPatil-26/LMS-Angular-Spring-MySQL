@@ -1,0 +1,21 @@
+<app-student-navbar></app-student-navbar>
+    <div class="wishlist-grid">
+      <mat-card-content>
+      <div class="wishlist-item" *ngFor="let item of wishlistedCourse; let i = index">
+        <div class="wishlist-item-image">
+          <img src="{{ item.thumbnail }}" alt="{{ item.title }}">
+        </div>
+        <div class="wishlist-item-details">
+          <h3 class="wishlist-item-title">{{ item.title }}</h3>
+          <p class="wishlist-item-price">Price: {{ item.price }}</p>
+          <div class="wishlist-item-actions">
+            <button mat-raised-button color="primary" [disabled]="isInCart[i]" (click)="addToCart(item.id)">
+              {{ isInCart[i] ? 'Already in Cart' : 'Add to Cart' }}
+            </button>
+            <button mat-raised-button color="warn" (click)="deleteFromWishlist(item.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+      </mat-card-content>
+    </div>
+

@@ -1,0 +1,21 @@
+<app-admin-navbar></app-admin-navbar>
+
+
+<div class="container">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="currentUser.user.name" [disabled]="true">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="currentUser.user.email" [disabled]="true">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>User Type</mat-label>
+    <input matInput [(ngModel)]="currentUser.userType" [disabled]="true">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" type="submit" [disabled]="true">Save Changes</button>
+</div>

@@ -1,0 +1,24 @@
+<app-instructor-navbar></app-instructor-navbar>
+
+
+<div class="container">
+  <h1 style="color: #673ab7;">Add Material (Image to Text)</h1>
+  <mat-form-field class="form-field-1">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="title" required>
+  </mat-form-field>
+  <div class="form-field">
+    <div class="form-field">
+      <label for="image-upload" class="upload-button">
+        Upload Image
+      </label>
+      <input id="image-upload" type="file" (change)="onImageSelected($event)">
+    </div>
+  </div>
+  <button mat-raised-button color="primary" [disabled]="description === '' || title === ''" (click)="submitForm()">Submit</button>
+  <div class="ocr-text">
+    <h3>OCR Text:</h3>
+    <mat-spinner *ngIf="loading" style="margin:0 auto;" [diameter]="40"></mat-spinner>
+    <p>{{ description }}</p>
+  </div>
+</div>

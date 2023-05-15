@@ -1,0 +1,18 @@
+<app-student-navbar></app-student-navbar>
+
+<div class="container">
+  <h2 style="color: #673ab7; text-align: center; padding-top: 30px;">Courses >>> {{categoryName}}</h2>
+  <mat-grid-list cols="3" gutterSize="16px">
+    <mat-grid-tile *ngFor="let course of courses" [colspan]="1" [rowspan]="1">
+      <mat-card class="course-card">
+        <a routerLink="/course-details" (click)="saveCourseId(course.id)">
+          <div class="course-image-container">
+            <img mat-card-image [src]="course.thumbnail" alt="{{ course.title }}" class="course-image">
+          </div>
+          <mat-card-title>{{ course.title }}</mat-card-title>
+          <mat-card-subtitle>Price: {{ course.price }}</mat-card-subtitle>
+        </a>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

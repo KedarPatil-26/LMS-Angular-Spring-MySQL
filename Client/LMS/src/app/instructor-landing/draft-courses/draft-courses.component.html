@@ -1,0 +1,38 @@
+<app-instructor-navbar></app-instructor-navbar>
+
+<div class="container mt-3">
+  <h2>Draft Courses</h2>
+  <hr>
+  <div class="row">
+    <div class="table-container">
+      <table mat-table [dataSource]="courses" class="mat-elevation-z8">
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>Title</th>
+          <td mat-cell *matCellDef="let course" class="td-title">{{ course.title }}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="actions" style="width: 150px;">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let course" class="td-buttons">
+            <div class="button-container">
+            <button mat-raised-button color="primary" (click)="editCourse(course)">Edit</button>
+            </div>
+            <div class="button-container">
+            <button mat-raised-button color="primary" (click)="editMaterial(course.id)">Add/Edit Material</button>
+            </div>
+            <div class="button-container">
+            <button mat-raised-button style="background-color: #72e85a;     z-index: 0;" (click)="publishCourse(course.id)">Publish</button>
+            </div>
+            <div class="button-container">
+            <button mat-raised-button color="warn" (click)="deleteCourse(course.id)">Delete</button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="[ 'title', 'actions']"></tr>
+        <tr mat-row *matRowDef="let course; columns: ['title', 'actions']"></tr>
+      </table>
+    </div>
+  </div>
+</div>

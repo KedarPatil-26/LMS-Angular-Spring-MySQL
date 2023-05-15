@@ -1,0 +1,19 @@
+<app-student-navbar></app-student-navbar>
+<div class="wishlist-grid">
+  <a *ngFor="let item of enrolledCourse; let i = index" (click)="viewCourse(item.id)">
+  <mat-card-content>
+    <div class="wishlist-item">
+      <div class="wishlist-item-image">
+        <img src="{{ item.thumbnail }}" alt="{{ item.title }}">
+      </div>
+      <div class="wishlist-item-details">
+        <h3 class="wishlist-item-title">{{ item.title }}</h3>
+        <p class="wishlist-item-price">{{ item.description }}</p>
+        <div class="wishlist-item-actions">
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  </a>
+</div>
+

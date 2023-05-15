@@ -1,0 +1,16 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="mat-elevation-z2">
+  <div class="card-container">
+    <mat-card *ngFor="let instructor of instructors | slice: pageIndex * pageSize : (pageIndex + 1) * pageSize"
+              class="card" ngClass="col-6">
+      <mat-card-content>
+        <mat-card-title>Name: {{ instructor.name }}</mat-card-title>
+        <mat-card-subtitle>Email: {{ instructor.email }}</mat-card-subtitle>
+        <button mat-raised-button class="block-button" color="warn" *ngIf="!instructor.blocked" (click)="blockInstructor(instructor)">Block</button>
+        <button mat-raised-button class="block-button" color="primary" *ngIf="instructor.blocked" (click)="unblockInstructor(instructor)">Unblock</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <mat-paginator [length]="totalInstructors" [pageSize]="pageSize" (page)="onPageChange($event)" showFirstLastButtons="false"></mat-paginator>
+</div>

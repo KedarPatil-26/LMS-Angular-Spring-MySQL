@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="header">Login</h2>
+  <form (ngSubmit)="login()" #loginForm="ngForm">
+    <mat-form-field appearance="outline" class="form-group">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" name="email" required [(ngModel)]="email">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-group">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password" required [(ngModel)]="password">
+    </mat-form-field>
+    <div class="alert alert-danger mt-3" *ngIf="error">
+      {{ error }}
+    </div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+
+    <div class="login-link">
+      <a routerLink="/register" routerLinkActive="active">Don't have an account? Register here</a>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,40 @@
+<app-student-navbar></app-student-navbar>
+
+<div class="container">
+
+  <div class="container-buttons">
+    <div class="search-filter-container">
+      <mat-form-field style="margin-top: 20px;" appearance="fill">
+        <mat-label>Search Courses</mat-label>
+        <input matInput type="text" [(ngModel)]="searchQuery" (keyup)="onSearch()">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="button" class="action-button" (click)="clearSearch()">Clear Search</button>
+
+      <div class="filter-container">
+        <mat-form-field style="margin-top: 20px;" >
+          <mat-label>Filter by Category</mat-label>
+          <mat-select [(value)]="selectedCategoryId">
+            <mat-option *ngFor="let category of categories" [value]="category.id">
+              {{ category.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="selectedCategoryId === 0" class="action-button" (click)="applyFilter()">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <mat-grid-list cols="3" gutterSize="16px">
+    <mat-grid-tile *ngFor="let course of filteredCourses" [colspan]="1" [rowspan]="1">
+      <mat-card class="course-card">
+        <a routerLink="/course-details" (click)="saveCourseId(course.id)">
+          <div class="course-image-container">
+            <img mat-card-image [src]="course.thumbnail" alt="{{ course.title }}" class="course-image">
+          </div>
+          <mat-card-title>{{ course.title }}</mat-card-title>
+          <mat-card-subtitle>Price: {{ course.price }}</mat-card-subtitle>
+        </a>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

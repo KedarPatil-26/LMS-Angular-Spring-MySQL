@@ -1,0 +1,22 @@
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.navbar {
+  display: flex;
+}
+
+a.mat-button {
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #E6E6FA;
+  height: calc(100vh - 64px);
+}

@@ -1,0 +1,91 @@
+.container-buttons {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  padding: 20px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.action-button{
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 40px;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+
+.course-card {
+  height: 90%;
+  width: 90%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 98%;
+  margin-left: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.course-image {
+  width: 520;
+  height: 390;
+  object-fit: contain;
+}
+
+.mat-card-header {
+  padding-bottom: 0;
+}
+
+.mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-right: 15%;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.mat-card-subtitle {
+  font-size: 16px !important;
+  margin-right: 15%;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: purple;
+}

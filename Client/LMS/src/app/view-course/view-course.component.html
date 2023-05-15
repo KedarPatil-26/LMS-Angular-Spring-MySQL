@@ -1,0 +1,26 @@
+<app-student-navbar></app-student-navbar>
+
+<div class ="container">
+<ng-container *ngFor="let material of courseMaterials">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{material.title}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngIf="material.materialType === 'text' || material.materialType === 'ocr'">
+      <p>{{material.description}}</p>
+    </div>
+    <div class="video" *ngIf="material.materialType === 'video'">
+      <video width="1200" controls>
+        <source  [src]="sanitizeUrl(material.fileUrl)" type="video/mp4">
+      </video>
+    </div>
+    <div class="pdf" *ngIf="material.materialType === 'pdf'">
+      <iframe [src]="sanitizeUrl(material.fileUrl)" width="1000" height="700"></iframe>
+    </div>
+    <div *ngIf="material.materialType === 'file'">
+      <p>{{material.description}}</p>
+      <a [href]="sanitizeUrl(material.fileUrl)" download>Download</a>
+    </div>
+  </mat-expansion-panel>
+</ng-container>
+</div>

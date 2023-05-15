@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <span class="logo" routerLink="/app-instructor-landing">EduLine</span>
+  <nav class="navbar">
+    <a mat-button routerLink="/admin-dashboard">Dashboard</a>
+    <button mat-button [matMenuTriggerFor]="requestsMenu">Requests</button>
+    <mat-menu #requestsMenu="matMenu">
+      <button mat-menu-item routerLink="/instructor-requests">Instructor</button>
+      <button mat-menu-item routerLink="/course-requests">Course</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="manageMenu">Manage</button>
+    <mat-menu #manageMenu="matMenu">
+      <button mat-menu-item routerLink="/manage-students">Students</button>
+      <button mat-menu-item routerLink="/manage-instructors">Instructors</button>
+      <button mat-menu-item routerLink="/manage-courses">Courses</button>
+      <button mat-menu-item routerLink="/manage-categories">Categories</button>
+    </mat-menu>
+  </nav>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/admin-profile">My Profile</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+</mat-toolbar>

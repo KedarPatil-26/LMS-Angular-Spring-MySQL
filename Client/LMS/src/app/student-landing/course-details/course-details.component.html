@@ -1,0 +1,23 @@
+<app-student-navbar></app-student-navbar>
+
+<mat-card class = "card">
+<div *ngIf="course" class="course-details">
+  <div class="course-info">
+    <img [src]="course.thumbnail" alt="Course Thumbnail" class="course-thumbnail" />
+    <div class="course-details-right">
+      <h2 class="course-title">{{ course.title }}</h2>
+      <ng-container *ngIf="course.price === 0; else priceTemplate" class="price-free">Free</ng-container>
+      <ng-template #priceTemplate class="price">{{ course.price }}$</ng-template>
+      <div class="course-buttons">
+        <button mat-raised-button color="primary" [disabled]="isInCart" (click)="addToCart()">
+          {{ isInCart ? 'Already in Cart' : 'Add to Cart' }}
+        </button>
+        <button mat-raised-button color="accent" [disabled]="isInWishlist" (click)="addToWishlist()">
+          {{ isInWishlist ? 'Already in Wishlist' : 'Add to Wishlist' }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <p class="course-description">Description: {{ course.description }}</p>
+</div>
+</mat-card>

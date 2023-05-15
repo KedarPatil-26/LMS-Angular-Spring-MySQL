@@ -1,0 +1,69 @@
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.navbar {
+  display: flex;
+}
+
+a.mat-button {
+  margin-right: 10px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 12vh;
+  width: 100%;
+  max-width: 100%;
+}
+.card:hover {
+  background-color: #cdbdff;
+}
+
+.mat-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.mat-card-title,
+.mat-card-subtitle {
+  font-weight: bold;
+  color: #673ab7;
+}
+
+.mat-paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-paginator .mat-paginator-range-actions {
+  width: auto;
+}
+
+.mat-paginator .mat-paginator-range-label {
+  display: none;
+}
+
+.mat-paginator .mat-paginator-navigation-background {
+  width: 90px;
+  margin: 0 10px;
+}
+
+.block-button {
+ position: absolute;
+ right: 20px;
+ top: 3.5vh;
+}

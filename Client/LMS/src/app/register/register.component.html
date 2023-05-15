@@ -1,0 +1,48 @@
+<div class="container">
+  <h2 class="header">Register</h2>
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput name="name" [(ngModel)]="name" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" name="email" [(ngModel)]="email" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password" [(ngModel)]="password" required>
+    </mat-form-field>
+
+    <div class="button-group">
+      <mat-button-toggle-group name="isInstructor" [(ngModel)]="isInstructor">
+        <mat-button-toggle value="no" class="toggle-btn">Student</mat-button-toggle>
+        <mat-button-toggle value="yes" class="toggle-btn">Instructor</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+
+    <div class="login-link">
+      <a routerLink="/login" routerLinkActive="active">Already have an account? Login here</a>
+    </div>
+
+  </form>
+
+  <div *ngIf="showConfirmationMessage" class="confirmation-message">
+    Registration successful! <br> <br>Redirecting to Login Page
+    <button mat-icon-button class="close-button" (click)="closeConfirmationMessage()">
+      <mat-icon aria-label="Close icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div *ngIf="showFailureMessage" class="confirmation-message">
+    Registration Failed! <br> <br>Please Try Again
+    <button mat-icon-button class="close-button" (click)="closeFailureMessage()">
+      <mat-icon aria-label="Close icon">close</mat-icon>
+    </button>
+  </div>
+
+</div>

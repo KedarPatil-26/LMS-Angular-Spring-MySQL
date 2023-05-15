@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #E6E6FA;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #5C2A9D;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.alert-danger {
+  color: #d0342c;
+  position: relative;
+  margin-bottom: 20px;
+  animation-name: pop-out;
+  animation-duration: 0.5s;
+  text-align: center;
+}
+
+@keyframes pop-out {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.alert-danger.exit {
+  color: #d0342c;
+  position: relative;
+  margin-bottom: 20px;
+  animation-name: pop-out-exit;
+  animation-duration: 0.5s;
+  text-align: center;
+}
+
+@keyframes pop-out-exit {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.login-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #9172EC;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s, font-size 0.3s;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  color: #673ab7;
+  font-size: 1.1em;
+}
+
+.login-link a:hover::before {
+  position: absolute;
+  left: 50%;
+  bottom: 110%;
+  transform: translateX(-50%);
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+.login-link a:hover::after {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.8);
+}

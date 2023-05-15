@@ -1,0 +1,21 @@
+<app-instructor-navbar></app-instructor-navbar>
+<app-instructor-navbar></app-instructor-navbar>
+
+<div class="container">
+  <mat-card>
+    <h1 style="color: #673ab7; text-align: center; padding-top: 20px;">Upload PDF</h1>
+    <mat-card-content style="text-align: center; display: flex; flex-direction: column;">
+      <mat-form-field class="form-field-1">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="title" required>
+      </mat-form-field>
+      <div class="form-field">
+        <label for="upload" class="upload-button">
+          Upload PDF
+        </label>
+        <input id="upload" type="file" (change)="onFileSelected($event)">
+      </div>
+      <button (click)="submit()" style="margin: auto;" mat-raised-button color="primary" [disabled]="title === '' || fileURL === ''">Submit</button>
+    </mat-card-content>
+  </mat-card>
+</div>

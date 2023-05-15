@@ -1,0 +1,14 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="mat-elevation-z2">
+  <div class="card-container">
+    <mat-card *ngFor="let course of courses | slice: pageIndex * pageSize : (pageIndex + 1) * pageSize"
+              class="card" ngClass="col-6">
+      <mat-card-content>
+        <mat-card-title>Title: {{ course.title }}</mat-card-title>
+        <button mat-raised-button class="block-button" color="primary" *ngIf="!course.authorized" (click)="authorizeCourse(course)">Authorize</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <mat-paginator [length]="totalCourses" [pageSize]="pageSize" (page)="onPageChange($event)" showFirstLastButtons="false"></mat-paginator>
+</div>

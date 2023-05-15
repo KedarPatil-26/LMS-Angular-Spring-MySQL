@@ -1,0 +1,25 @@
+<app-instructor-navbar></app-instructor-navbar>
+
+<div class="container">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="currentUser.user.name"  required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="currentUser.user.email" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput [(ngModel)]="currentUser.user.password" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>User Type</mat-label>
+    <input matInput [(ngModel)]="currentUser.userType" [disabled]="true">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" type="submit" (click)="updateInstructor()">Save Changes</button>
+</div>

@@ -1,0 +1,19 @@
+<app-instructor-navbar></app-instructor-navbar>
+
+
+<div class="container">
+  <div class="form-container">
+    <form (ngSubmit)="submitForm()" class="form">
+      <h2>Add Text Material</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" name="title" [(ngModel)]="title" required style="height: 30px;">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput name="description" [(ngModel)]="description" required style="height: 300px;"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="add-button">Add Material</button>
+    </form>
+  </div>
+</div>
